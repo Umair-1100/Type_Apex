@@ -87,6 +87,13 @@ p::selection {
     color: #434e4b;
     font-size: 1.3rem;
   }
+  span{
+    color: #00ffff;
+    font-weight: 500;
+    font-size: 2rem;
+    font-family: "Josefin Sans", sans-serif;
+
+  }
 }
 .time{
     font-size: 1.5rem;
@@ -96,6 +103,7 @@ p::selection {
 .contianer{
   padding: 0 5rem;
   width: 100%;
+  user-select: none;  
   p{
     color: white;
     line-height:1.5;
@@ -113,7 +121,7 @@ p::selection {
     padding: 1rem 2rem;
     width: 50%;
     background-color: #434e4b;
-    color: #00ffff;
+    color: #ffffff;
     font-size: 1.2rem;
     border: 1px solid #111716;
     outline: none;
@@ -171,20 +179,11 @@ p::selection {
     margin-bottom: 0.3rem;
     transition: all 0.3s ease-in;
   }
-  #result1{
+  #result1,#result2,#result3,#result4{
     color: #00ffff;
     transition: all 0.3s ease-in;
-
-  }
-  #result2{
-    transition: all 0.3s ease-in;
-    color: #00ffff;
-  }#result3{
-    transition: all 0.3s ease-in;
-    color: #00ffff;
-  }#result4{
-    transition: all 0.3s ease-in;
-    color: #00ffff;
+    font-weight: 700;
+    font-size: 1.5rem;
   }
 }
 .corect_words:hover{
@@ -192,28 +191,34 @@ p::selection {
   p{
     color: black;
   }
-  #result1{
-    color: #000;
-  }
-  #result2{
-    color: #000;
-  }#result3{
-    color: #000;
-  }#result4{
+  #result1,#result2,#result3,#result4{
     color: #000;
   }
 }
 .footer_of_type_pro{
-  border-top: 1px solid #00ffff;
+  border-top: 2px solid gray;
   margin-top: 2rem;
   display: flex;
+  align-items: center;
   padding: 1rem 0;
   justify-content: space-evenly;
   p{
     color: white;
     font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
   }
-  /* width: 90%; */
+}
+.footer_of_type_pro p:nth-child(2){
+  font-weight: 600;
+  letter-spacing: 1px;
+  span{
+    color: #000;
+    background-color: #00ffff;
+    font-size: 1rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+  }
 }
 .form_inputs{
   display: flex;
@@ -221,42 +226,60 @@ p::selection {
 .inputs_user{
   overflow: hidden;
   width: 50%;
-  padding: 1rem 1rem 1rem 3rem;
+  padding:0rem 1rem 1rem 3rem;
+  h1{
+    font-family: "Josefin Sans", sans-serif;
+    margin: 0 0 1rem 0;
+    font-size: 3rem;
+    span{
+      font-family: "Poppins", sans-serif;
+      background-color: #00ffff;
+      color: #000;
+      padding: 0rem 0.8rem;
+      border-radius: 5px;
+      
+    }
+  }
   input{
     width: 100%;
     margin-bottom: 1rem;
     background-color: transparent;
     padding: 1rem;
-    border: 1px solid #00ffff;
+    border: none;
+    border-bottom: 2px solid gray;
     outline: none;
-    color: #00ffff;
-    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
   }
   textarea{
+    font-weight: 500;
+    font-size: 1.1rem;
     width: 100%;
     background-color: transparent;
     padding: 1.5rem;
-    border: 1px solid #00ffff;
-    color: #00ffff;
+    border: none;
+    appearance: none;
+    border-bottom: 2px solid gray;
+    color: #fff;
     outline: none;
   }
   .submit_button{
     border: 1px solid #00ffff;
     text-align: center;
-    width: 30%;
+    border-radius: 5px;
     margin-top: 1rem;
     transition: all 0.3s ease-in;
-    color: #00ffff;
+    background-color: #00ffff;
     text-decoration: none;
-    padding: 1.3rem;
+    padding: 0.8rem 3rem;
     font-weight: 600;
-    background: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 .submit_button:hover{
-  background-color: #00ffff;
-    color: #000;
+  color: #00ffff;
+  background-color: transparent;
 }
 input::placeholder{
   font-family: "Poppins", sans-serif;
@@ -265,12 +288,16 @@ input::placeholder{
 textarea::placeholder{
   font-family: "Poppins", sans-serif;
 }
+.map-over{
+  overflow: hidden;
+  height: 100%;
+}
 .map{
   width: 50%;
-  padding: 1rem 1rem 1rem 3rem;
+  padding: 1rem 2rem 1rem 1rem;
 
 }
-@media (max-width:768px) {
+@media only screen and (max-width:768px) {
 .black_section{
   margin-bottom: 1rem;
 }
@@ -340,36 +367,11 @@ textarea::placeholder{
     margin-bottom: 0.3rem;
     transition: all 0.3s ease-in;
   }
-  #result1{
-    color: #00ffff;
-    transition: all 0.3s ease-in;
-
-  }
-  #result2{
-    transition: all 0.3s ease-in;
-    color: #00ffff;
-  }#result3{
-    transition: all 0.3s ease-in;
-    color: #00ffff;
-  }#result4{
-    transition: all 0.3s ease-in;
-    color: #00ffff;
-  }
 }
 .corect_words:hover{
   background-color: #00ffff;
   p{
     color: black;
-  }
-  #result1{
-    color: #000;
-  }
-  #result2{
-    color: #000;
-  }#result3{
-    color: #000;
-  }#result4{
-    color: #000;
   }
 }
 .footer_of_type_pro{

@@ -48,6 +48,7 @@ const handleInput = (e) => {
     second();
   }
   if (value == words[counter]) {
+    corAudio();
     input.value = "";
     counter += 1;
     corWords += 1;
@@ -57,13 +58,27 @@ const handleInput = (e) => {
     input.value = "";
     wroWords += 1;
     id.style.color = "red";
+    wroAudio();
   }
-  result2.innerText =  wroWords;
-  result1.innerText =  corWords;
+  result2.innerText = wroWords;
+  result1.innerText = corWords ;
   result4.innerText =  Math.round(corWords / 1);
   result3.innerText =  ((corWords / words.length) * 100).toFixed(2) + `%`;
 };
 
+let audio = new Audio("./images/finish.m4a");
+let corSound = new Audio("./images/correct2.m4a")
+let wroSound = new Audio("./images/wrong.m4a")
+
+function corAudio(){ 
+  corSound.play();
+}
+function wroAudio(){ 
+  wroSound.play();
+}
+function sound(){ 
+  audio.play();
+}
 let timer = 60;
 let checked = 0;
 function second() {
@@ -76,7 +91,8 @@ function second() {
     if (timer === 0) {
       clearInterval(interval);
       input.setAttribute("disabled", true);
-      input.value = "";
+      input.value = "Time Up";
+      sound()
     }
   }, 1000);
 }
